@@ -1,0 +1,43 @@
+/* Friday Blocked Merge Button Styles */
+button.friday-blocked,
+button[data-friday-blocked="true"] {
+  cursor: not-allowed !important;
+  position: relative;
+}
+
+button.friday-blocked::after,
+button[data-friday-blocked="true"]::after {
+  content: attr(data-friday-message);
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d73a49;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+  font-weight: 500;
+}
+
+button.friday-blocked:hover::after,
+button[data-friday-blocked="true"]:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  button.friday-blocked::after,
+  button[data-friday-blocked="true"]::after {
+    font-size: 14px;
+    padding: 8px 16px;
+    top: -45px;
+  }
+}
