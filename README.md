@@ -77,7 +77,7 @@ location.reload();
 
 ## License
 
-MIT
+GPLv3
 
 ## Contributing
 
